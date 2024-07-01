@@ -1112,3 +1112,81 @@ x==========x]
 [2024-06-30 22:18:53,281: INFO: _internal: 127.0.0.1 - - [30/Jun/2024 22:18:53] "POST /predict HTTP/1.1" 200 -]
 [2024-06-30 22:19:10,327: WARNING: polymorphic_function: 6 out of the last 6 calls to <function Model.make_predict_function.<locals>.predict_function at 0x000002C13A3B60D0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
 [2024-06-30 22:19:10,331: INFO: _internal: 127.0.0.1 - - [30/Jun/2024 22:19:10] "POST /predict HTTP/1.1" 200 -]
+[2024-07-01 09:31:00,359: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.5:8080]
+[2024-07-01 09:31:00,361: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-07-01 09:31:10,874: INFO: _internal: 127.0.0.1 - - [01/Jul/2024 09:31:10] "GET / HTTP/1.1" 200 -]
+[2024-07-01 09:31:21,033: INFO: _internal: 127.0.0.1 - - [01/Jul/2024 09:31:21] "POST /predict HTTP/1.1" 200 -]
+[2024-07-01 09:31:39,013: INFO: _internal: 127.0.0.1 - - [01/Jul/2024 09:31:39] "POST /predict HTTP/1.1" 200 -]
+[2024-07-01 09:31:52,835: INFO: _internal: 127.0.0.1 - - [01/Jul/2024 09:31:52] "POST /predict HTTP/1.1" 200 -]
+[2024-07-01 09:34:58,977: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.177.176:8080]
+[2024-07-01 09:34:58,978: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-07-01 09:35:10,878: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-07-01 09:35:10,891: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-07-01 09:35:10,902: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-07-01 09:35:10,902: INFO: common: created directory at: artifacts]
+[2024-07-01 09:35:10,902: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-07-01 09:35:10,903: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1aNp_Qj-7YJ0R7zrLvY4Ip_R1ZCI2kuZH/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-07-01 09:35:26,429: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1aNp_Qj-7YJ0R7zrLvY4Ip_R1ZCI2kuZH/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-07-01 09:35:26,439: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-07-01 09:35:26,439: INFO: main: *******************]
+[2024-07-01 09:35:26,440: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2024-07-01 09:35:26,442: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-07-01 09:35:26,443: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-07-01 09:35:26,443: INFO: common: created directory at: artifacts]
+[2024-07-01 09:35:26,443: INFO: common: created directory at: artifacts/prepare_base_model]
+[2024-07-01 09:35:27,661: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-07-01 09:35:27,980: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2024-07-01 09:35:27,980: INFO: main: *******************]
+[2024-07-01 09:35:27,980: INFO: main: >>>>>> stage Training started <<<<<<]
+[2024-07-01 09:35:27,983: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-07-01 09:35:27,985: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-07-01 09:35:27,987: INFO: common: created directory at: artifacts]
+[2024-07-01 09:35:27,987: INFO: common: created directory at: artifacts\training]
+[2024-07-01 09:37:32,541: INFO: main: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2024-07-01 09:37:32,541: INFO: main: *******************]
+[2024-07-01 09:37:32,542: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-07-01 09:37:32,546: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-07-01 09:37:32,548: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-07-01 09:37:32,549: INFO: common: created directory at: artifacts]
+[2024-07-01 09:38:10,409: INFO: common: json file saved at: scores.json]
+[2024-07-01 09:38:10,415: INFO: common: json file saved at: scores.json]
+[2024-07-01 09:38:12,040: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 14). These functions will not be directly callable after loading.]
+[2024-07-01 09:38:12,542: INFO: builder_impl: Assets written to: C:\Users\irbaz\AppData\Local\Temp\tmp6dw1rin_\model\data\model\assets]
+[2024-07-01 09:38:19,429: INFO: dir_util: creating C:\Users\irbaz\OneDrive\Desktop\Project\Cancer_project\mlruns\0\95b4422938b546b68731887aef76ab7f\artifacts\model\data]
+[2024-07-01 09:38:19,431: INFO: dir_util: creating C:\Users\irbaz\OneDrive\Desktop\Project\Cancer_project\mlruns\0\95b4422938b546b68731887aef76ab7f\artifacts\model\data\model]
+[2024-07-01 09:38:19,431: INFO: dir_util: creating C:\Users\irbaz\OneDrive\Desktop\Project\Cancer_project\mlruns\0\95b4422938b546b68731887aef76ab7f\artifacts\model\data\model\assets]
+[2024-07-01 09:38:19,436: INFO: dir_util: creating C:\Users\irbaz\OneDrive\Desktop\Project\Cancer_project\mlruns\0\95b4422938b546b68731887aef76ab7f\artifacts\model\data\model\variables]
+[2024-07-01 09:38:19,542: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2024-07-01 09:38:20,150: INFO: _internal: 127.0.0.1 - - [01/Jul/2024 09:38:20] "GET /train HTTP/1.1" 200 -]
+[2024-07-01 09:38:20,188: INFO: _internal: 127.0.0.1 - - [01/Jul/2024 09:38:20] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2024-07-01 10:36:00,641: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.171.176:8080]
+[2024-07-01 10:36:00,641: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-07-01 10:36:11,074: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-07-01 10:36:11,085: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-07-01 10:36:11,086: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-07-01 10:36:11,087: INFO: common: created directory at: artifacts]
+[2024-07-01 10:36:11,087: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-07-01 10:36:11,087: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1aNp_Qj-7YJ0R7zrLvY4Ip_R1ZCI2kuZH/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-07-01 10:37:16,445: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1aNp_Qj-7YJ0R7zrLvY4Ip_R1ZCI2kuZH/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-07-01 10:37:17,326: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-07-01 10:37:17,685: INFO: _internal: 127.0.0.1 - - [01/Jul/2024 10:37:17] "GET /train HTTP/1.1" 200 -]
+[2024-07-01 10:38:02,113: INFO: _internal: 127.0.0.1 - - [01/Jul/2024 10:38:02] "GET / HTTP/1.1" 200 -]
